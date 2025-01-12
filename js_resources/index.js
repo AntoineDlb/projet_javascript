@@ -1,7 +1,7 @@
 // affichage des films tendances grace a l'API
 
 const apiKey = '3866e5f2';
-const searchQuery = 'batman'; // Requête de recherche pour les films tendances
+const searchQuery = 'avengers'; // Requête de recherche pour les films tendances
 const apiUrl = `https://www.omdbapi.com/?apikey=${apiKey}&s=${searchQuery}`;
 
 async function fetchTrendingMovies() {

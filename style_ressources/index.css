@@ -6,7 +6,6 @@
         "main_sidebar search"
         "main_sidebar main";
     
-    background-color: #131417;
     border-radius: 10px;
 }
 
@@ -37,7 +36,8 @@
     display: flex;
     flex-direction: column;
     background-color: #292B31;
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
     height: 100%; /* Assurez-vous que la hauteur de la sidebar prend toute la hauteur de la grille */
     max-width: 150px; /* Limitez la largeur maximale à celle du logo */
 }
@@ -45,6 +45,8 @@
 .main_content {
     grid-area: main;
     height: 100%; /* Assurez-vous que la hauteur du contenu principal prend toute la hauteur de la grille */
+    background-color: #131417;
+
 }
 
 .search_bar_container {
@@ -64,6 +66,7 @@
     margin-left: 1em;
     background-color: #2B2B30;
     border-radius: 10px;
+
 }
 
 .film_container {
