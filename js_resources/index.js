@@ -1,15 +1,19 @@
 // affichage des films tendances grace a l'API
 
 const apiKey = '3866e5f2';
-const searchQuery = 'avengers'; // Requête de recherche pour les films tendances
-const apiUrl = `https://www.omdbapi.com/?apikey=${apiKey}&s=${searchQuery}`;
+let pageActuelle = 1;
 
 async function fetchTrendingMovies() {
+    const requete = '2024'; // Requête de recherche pour les films tendances
+    const apiUrl = `https://www.omdbapi.com/?apikey=${apiKey}&s=movie&y=${requete}&page=${pageActuelle}`;
+
     try {
         const response = await fetch(apiUrl);
         const data = await response.json();
         if (data.Response === 'True') {
+            console.log('Films récupérés:', data.Search); // Ajout d'un log pour vérifier les données récupérées
             displayMovies(data.Search);
+            pageActuelle++; // Incrémentez la page pour la prochaine requête
         } else {
             console.error('Erreur lors de la récupération des films:', data.Error);
         }
@@ -20,14 +24,18 @@ async function fetchTrendingMovies() {
 
 function displayMovies(movies) {
     const filmContainer = document.querySelector('.film_container');
-    filmContainer.innerHTML = '';
+    // filmContainer.innerHTML = ''; // Commented out to prevent clearing the container
 
     movies.forEach(movie => {
+        if (movie.Poster === 'N/A') {
+            return; // Ne pas afficher les films sans affiche
+        }
+
         const filmCard = document.createElement('div');
         filmCard.classList.add('film_card');
 
         const filmImg = document.createElement('img');
-        filmImg.src = movie.Poster !== 'N/A' ? movie.Poster : 'placeholder.jpg';
+        filmImg.src = movie.Poster;
         filmImg.alt = movie.Title;
         filmImg.classList.add('film_img');
 
@@ -37,9 +45,19 @@ function displayMovies(movies) {
 
         filmCard.appendChild(filmImg);
         filmCard.appendChild(filmInfo);
-        if (movie.Type === 'movie') {
+        if (movie.Type === 'movie'){
             filmContainer.appendChild(filmCard);
         }
     });
 }
+
+function fetchNewMovies() {
+    const bouton_fetch = document.querySelector('.search_button');
+    bouton_fetch.addEventListener('click', fetchTrendingMovies);
+}
+
+// Initialize the event listener for the button
+fetchNewMovies();
+
+// Optionally, fetch trending movies on page load
 fetchTrendingMovies();

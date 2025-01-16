@@ -60,7 +60,7 @@
 }
 
 .search_bar {
-    width: 20em;
+    width: 100%;
     padding: 1em;
     margin: 1em;
     margin-left: 1em;
@@ -93,11 +93,13 @@
     color: #fff;
 }
 
-@media (max-width: 768px) {
-    .search_bar {
-        width: 15em; /* Réduisez la largeur de la barre de recherche pour les écrans plus petits */
+.bouton_fetch{
+    display: flex;
+    justify-content: center;
+}
 
-    }
+@media (max-width: 768px) {
+
     .logo_img {
         max-width: 150px; /* Ajustez la largeur maximale pour les écrans plus petits */
         min-width: 100px; /* Ajustez la largeur minimale pour les écrans plus petits */
@@ -108,9 +110,7 @@
 }
 
 @media (max-width: 480px) {
-    .search_bar {
-        width: 10em; /* Réduisez encore plus la largeur de la barre de recherche pour les très petits écrans */
-    }
+    
     .logo_img {
         max-width: 100px; /* Ajustez la largeur maximale pour les très petits écrans */
         min-width: 100px; /* Ajustez la largeur minimale pour les très petits écrans */
