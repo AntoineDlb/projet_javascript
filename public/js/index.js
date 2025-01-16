@@ -11,9 +11,8 @@ async function fetchTrendingMovies() {
         const response = await fetch(apiUrl);
         const data = await response.json();
         if (data.Response === 'True') {
-            console.log('Films récupérés:', data.Search); // Ajout d'un log pour vérifier les données récupérées
             displayMovies(data.Search);
-            pageActuelle++; // Incrémentez la page pour la prochaine requête
+            pageActuelle++;
         } else {
             console.error('Erreur lors de la récupération des films:', data.Error);
         }
@@ -55,6 +54,30 @@ function fetchNewMovies() {
     const bouton_fetch = document.querySelector('.search_button');
     bouton_fetch.addEventListener('click', fetchTrendingMovies);
 }
+
+async function load_header() {
+    const header = document.getElementById('header');
+    try {
+        const reponse = await fetch('components/header.html');
+        const data = await reponse.text();
+        header.innerHTML = data;
+    } catch (error) {
+        console.error('Erreur lors de la récupération du header:', error);
+    }
+
+}
+
+// function click_filmCard() {
+//     const filmCards = document.querySelectorAll('.film_card');
+//     filmCards.forEach(filmCard => {
+//         filmCard.addEventListener('click', () => {
+//             /* a compléter */
+
+//         });
+//     });
+// }
+
+load_header();
 
 // Initialize the event listener for the button
 fetchNewMovies();
