@@ -1,0 +1,42 @@
+# Projet JavaScript
+
+## Description
+Ce projet est un site web développé en JavaScript. Il a pour but de simuler un site de review cinéma.
+
+## Fonctionnalités
+- Fonctionnalité 1 : [Description de la fonctionnalité 1]
+- Fonctionnalité 2 : [Description de la fonctionnalité 2]
+- Fonctionnalité 3 : [Description de la fonctionnalité 3]
+
+## Installation
+Pour installer et exécuter ce projet localement, suivez les étapes ci-dessous :
+
+1. Clonez le dépôt :
+    ```bash
+    git clone https://github.com/votre-utilisateur/projet_javascript.git
+    ```
+
+2. Accédez au répertoire du projet :
+    ```bash
+    cd projet_javascript
+    ```
+
+3. installez Node et npm :
+
+
+4. dans un terminal tapez: npm server.js
+
+## Utilisation
+naviguez sur le site pour rechercher des films et leurs descriptions
+
+## Contribuer
+Les contributions sont les bienvenues ! Pour proposer des modifications, veuillez suivre les étapes suivantes :
+
+1. Fork le projet
+2. Créez une branche pour votre fonctionnalité (`git checkout -b fonctionnalite/AmazingFeature`)
+3. Commitez vos modifications (`git commit -m 'Ajout d'une fonctionnalité incroyable'`)
+4. Poussez vers la branche (`git push origin fonctionnalite/AmazingFeature`)
+5. Ouvrez une Pull Request
+
+## Licence
+Ce projet appartien a Antoine DELEBECQUE. Voir le fichier `LICENSE` pour plus de détails.
