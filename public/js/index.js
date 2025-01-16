@@ -11,9 +11,8 @@ async function fetchTrendingMovies() {
         const response = await fetch(apiUrl);
         const data = await response.json();
         if (data.Response === 'True') {
-            console.log('Films récupérés:', data.Search); // Ajout d'un log pour vérifier les données récupérées
             displayMovies(data.Search);
-            pageActuelle++; // Incrémentez la page pour la prochaine requête
+            pageActuelle++;
         } else {
             console.error('Erreur lors de la récupération des films:', data.Error);
         }

@@ -4,9 +4,9 @@
 Ce projet est un site web développé en JavaScript. Il a pour but de simuler un site de review cinéma.
 
 ## Fonctionnalités
-- Fonctionnalité 1 : [Description de la fonctionnalité 1]
-- Fonctionnalité 2 : [Description de la fonctionnalité 2]
-- Fonctionnalité 3 : [Description de la fonctionnalité 3]
+- page d'acceuil avec film tendance
+- page de recherche pour les film avec l'api Omdb
+- page de description des films
 
 ## Installation
 Pour installer et exécuter ce projet localement, suivez les étapes ci-dessous :
@@ -21,7 +21,7 @@ Pour installer et exécuter ce projet localement, suivez les étapes ci-dessous 
     cd projet_javascript
     ```
 
-3. installez Node et npm :
+3. installez Node et npm
 
 
 4. dans un terminal tapez: npm server.js
