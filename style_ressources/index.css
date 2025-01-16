@@ -1,5 +1,3 @@
-
-
 .container {
     display: grid;
     grid-template-columns: auto 1fr; /* Ajuste automatiquement la largeur de la première colonne */
@@ -7,8 +5,7 @@
     grid-template-areas:
         "main_sidebar search"
         "main_sidebar main";
-    height: 100vh; /* Utilisez 100vh pour que la hauteur de la grille prenne toute la hauteur de la fenêtre */
-    background-color: #131417;
+    
     border-radius: 10px;
 }
 
@@ -39,7 +36,8 @@
     display: flex;
     flex-direction: column;
     background-color: #292B31;
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
     height: 100%; /* Assurez-vous que la hauteur de la sidebar prend toute la hauteur de la grille */
     max-width: 150px; /* Limitez la largeur maximale à celle du logo */
 }
@@ -47,7 +45,8 @@
 .main_content {
     grid-area: main;
     height: 100%; /* Assurez-vous que la hauteur du contenu principal prend toute la hauteur de la grille */
-    padding: 10px;
+    background-color: #131417;
+
 }
 
 .search_bar_container {
@@ -61,19 +60,46 @@
 }
 
 .search_bar {
-    width: 20em;
+    width: 100%;
     padding: 1em;
     margin: 1em;
     margin-left: 1em;
     background-color: #2B2B30;
     border-radius: 10px;
+
+}
+
+.film_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.film_card {
+    background-color: #292B31;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.film_img {
+    width: 100%;
+    height: auto;
+}
+
+.film_info {
+    padding: 10px;
+    color: #fff;
+}
+
+.bouton_fetch{
+    display: flex;
+    justify-content: center;
 }
 
 @media (max-width: 768px) {
-    .search_bar {
-        width: 15em; /* Réduisez la largeur de la barre de recherche pour les écrans plus petits */
 
-    }
     .logo_img {
         max-width: 150px; /* Ajustez la largeur maximale pour les écrans plus petits */
         min-width: 100px; /* Ajustez la largeur minimale pour les écrans plus petits */
@@ -84,9 +110,7 @@
 }
 
 @media (max-width: 480px) {
-    .search_bar {
-        width: 10em; /* Réduisez encore plus la largeur de la barre de recherche pour les très petits écrans */
-    }
+    
     .logo_img {
         max-width: 100px; /* Ajustez la largeur maximale pour les très petits écrans */
         min-width: 100px; /* Ajustez la largeur minimale pour les très petits écrans */
