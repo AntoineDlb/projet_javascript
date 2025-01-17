@@ -35,6 +35,33 @@
 .bouton_fetch{
     display: flex;
     justify-content: center;
+    margin: 1em;
+}
+
+.bouton_fetch .bouton:hover {
+    transform: scale(1.1);
+
+}
+
+.bouton {
+    background-color: #292B31;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: transform 0.5s;
+}
+
+.titre_container {
+    display: flex;
+    justify-content: center;
+    margin: 1em;
+}
+
+.titre {
+    background-color: #2B2B30;
+    padding: 1em;
+    border-radius: 10px;
 }
 
 
