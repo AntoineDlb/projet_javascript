@@ -23,8 +23,7 @@ async function fetchTrendingMovies() {
 
 function displayMovies(movies) {
     const filmContainer = document.querySelector('.film_container');
-    // filmContainer.innerHTML = ''; // Commented out to prevent clearing the container
-
+    // filmContainer.innerHTML = ''; 
     movies.forEach(movie => {
         if (movie.Poster === 'N/A') {
             return; // Ne pas afficher les films sans affiche
@@ -51,8 +50,17 @@ function displayMovies(movies) {
 }
 
 function fetchNewMovies() {
-    const bouton_fetch = document.querySelector('.search_button');
+    const bouton_fetch = document.querySelector('.bouton');
     bouton_fetch.addEventListener('click', fetchTrendingMovies);
+}
+
+
+function extend_seatch_bar() {
+    const searchButton = document.querySelector('.loupe_search');
+    const searchInput = document.querySelector('.search_bar');
+    searchButton.addEventListener('click', function() {
+        searchInput.classList.toggle('search_bar_active');
+    });
 }
 
 // function click_filmCard() {
@@ -64,6 +72,8 @@ function fetchNewMovies() {
 //         });
 //     });
 // }
+
+extend_seatch_bar();
 
 // Initialize the event listener for the button
 fetchNewMovies();
