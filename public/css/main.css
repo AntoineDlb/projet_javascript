@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: #131417;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Ajuste automatiquement la largeur de la première colonne */
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "main_sidebar search"
+        "main_sidebar main";
+    
+    border-radius: 10px;
+    height: 100vh; /* Assurez-vous que la grille prend toute la hauteur de la page */
+}
+
+.logo_img {
+    width: 100%; /* Le logo prendra toute la largeur de son conteneur */
+    max-width: 150px; /* Définissez une largeur maximale pour le logo */
+    min-width: 100px; /* Définissez une largeur minimale pour le logo */
+    height: auto; /* Maintient le ratio d'aspect du logo */
+    border-top-left-radius: 10px;
+}
+
+.logo_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.filters_main_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+
+.main_sidebar {
+    grid-area: main_sidebar;
+    display: flex;
+    flex-direction: column;
+    background-color: #292B31;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    height: 100%; /* Assurez-vous que la hauteur de la sidebar prend toute la hauteur de la grille */
+    max-width: 150px; /* Limitez la largeur maximale à celle du logo */
+}
+
+.main_content {
+    grid-area: main;
+    height: 100%; /* Assurez-vous que la hauteur du contenu principal prend toute la hauteur de la grille */
+    background-color: #131417;
+
+}
+
+.search_bar_container {
+    grid-area: search;
+    display: flex;
+    height: 82.46px;
+    max-height: 109.95px; 
+    background-color: #000;
+    border-top-right-radius: 10px;
+    align-items: center;
+    position: relative;
+}
+
+
+.search_bar_container #searchForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.search_bar_container .search_bar{
+    padding: 1em;
+    margin: 1.5em;
+    margin-left: 1em;
+    background-color: #ffffff;
+    border-radius: 10px;
+
+}
+
+.loupe_search{
+    display: flex;
+    justify-content: center;
+    margin: 0.5em;
+    padding: 0.5em;
+    margin-left:1em ;
+    background-color: #2B2B30;
+    border-radius: 50%;
+    cursor: pointer;
+    
+
+}
+.search_bar {
+    width: 0;
+    opacity: 0;
+    transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+.search_bar_active {
+    width: 200px; /* Ajustez cette valeur selon vos besoins */
+    opacity: 1;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+    padding: 1em;
+    background-color: #55555f;
+    border-radius: 10px;
+}
+
+.filters_list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+    padding: 1em;
+    background-color: #55555f;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.filters img {
+    cursor: pointer;
+    margin-left: 0.5em;
+}
+
+.filters_liste_active {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+
+    .logo_img {
+        max-width: 150px; /* Ajustez la largeur maximale pour les écrans plus petits */
+        min-width: 100px; /* Ajustez la largeur minimale pour les écrans plus petits */
+    }
+    .main_sidebar {
+        max-width: 150px; /* Ajustez la largeur maximale pour les écrans plus petits */
+    }
+
+}
+
+@media (max-width: 480px) {
+    
+    .logo_img {
+        max-width: 100px; /* Ajustez la largeur maximale pour les très petits écrans */
+        min-width: 100px; /* Ajustez la largeur minimale pour les très petits écrans */
+    }
+    .main_sidebar {
+        max-width: 100px; /* Ajustez la largeur maximale pour les très petits écrans */
+    }
+}
