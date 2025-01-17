@@ -12,4 +12,15 @@ async function load_header() {
 
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    const filtersButton = document.querySelector('.filters img');
+    const filtersList = document.querySelectorAll('.filters_list');
+
+    filtersButton.addEventListener('click', function() {
+        filtersList.forEach(filter => {
+            filter.classList.toggle('filters_liste_active');
+        });
+    });
+});
+
 load_header();
