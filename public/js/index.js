@@ -31,6 +31,7 @@ function displayMovies(movies) {
 
         const filmCard = document.createElement('div');
         filmCard.classList.add('film_card');
+        filmCard.setAttribute('data-id',movie.imdbID);
 
         const filmImg = document.createElement('img');
         filmImg.src = movie.Poster;
@@ -47,6 +48,9 @@ function displayMovies(movies) {
             filmContainer.appendChild(filmCard);
         }
     });
+
+    click_filmCard()
+
 }
 
 function fetchNewMovies() {
@@ -63,15 +67,15 @@ function extend_seatch_bar() {
     });
 }
 
-// function click_filmCard() {
-//     const filmCards = document.querySelectorAll('.film_card');
-//     filmCards.forEach(filmCard => {
-//         filmCard.addEventListener('click', () => {
-//             /* a compléter */
-
-//         });
-//     });
-// }
+function click_filmCard() {
+    const filmCards = document.querySelectorAll('.film_card');
+    filmCards.forEach(filmCard => {
+        filmCard.addEventListener('click', () => {
+            const MovieId = filmCard.getAttribute('data-id');
+            window.location.href=`movie.html?i=${MovieId}`;
+        });
+    });
+}
 
 extend_seatch_bar();
 
