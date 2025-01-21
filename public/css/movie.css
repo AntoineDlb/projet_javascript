@@ -12,10 +12,10 @@
     text-align: center;
 }
 
-#poster {
+.poster {
     grid-row: 1 / span 2;
     grid-column: 1/2;
-    background-color: #292B31;
+    background-color: .292B31;
     border-radius: 10px;
     padding: 10px;
     overflow: hidden;
@@ -24,17 +24,17 @@
     height: 95%;
 }
 
-#mini_plot,#desc{
+.actor,.desc{
     grid-column: 2 / 3;
     margin-left: 5px;
 }
 
-#desc{
+.desc{
     color: aliceblue;
     display: flex;
     flex-direction: row;
     grid-row: 1/2;
-    background-color: #3a3c42;
+    background-color: .3a3c42;
     border-radius: 10px;
     padding: 10px;
     overflow: hidden;
@@ -43,22 +43,22 @@
     text-align: start;
 } 
 
-#score{
+.score{
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-end;
     margin-left: auto;
 }
 
-#mini_plot {
+.actor {
     grid-row: 2 / 3;
     color: aliceblue;
 }
 
-#plot{
+.plot{
     grid-column: 1/ span 3;
     grid-row: 3;
-    background-color: #3a3c42;
+    background-color: .3a3c42;
     border-radius: 10px;
     overflow: hidden;
     text-align: center;
