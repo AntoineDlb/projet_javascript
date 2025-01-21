@@ -64,7 +64,9 @@ function displayMovies(movies) {
 
         filmCard.appendChild(filmImg);
         filmCard.appendChild(filmInfo);
-        filmContainer.appendChild(filmCard);
+        if (movie.Type === 'movie' && movie.Poster !== 'N/A') {
+            filmContainer.appendChild(filmCard);
+        }
     });
 }
 
@@ -76,6 +78,7 @@ function clearResults() {
 function extend_seatch_bar() {
     const searchButton = document.querySelector('.loupe_search');
     const searchInput = document.querySelector('.search_bar');
+    searchInput.classList.toggle('search_bar_active');
     searchButton.addEventListener('click', function() {
         searchInput.classList.toggle('search_bar_active');
     });
