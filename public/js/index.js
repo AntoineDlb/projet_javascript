@@ -59,13 +59,6 @@ function fetchNewMovies() {
 }
 
 
-function extend_seatch_bar() {
-    const searchButton = document.querySelector('.loupe_search');
-    const searchInput = document.querySelector('.search_bar');
-    searchButton.addEventListener('click', function() {
-        searchInput.classList.toggle('search_bar_active');
-    });
-}
 
 function click_filmCard() {
     const filmCards = document.querySelectorAll('.film_card');
@@ -76,8 +69,6 @@ function click_filmCard() {
         });
     });
 }
-
-extend_seatch_bar();
 
 // Initialize the event listener for the button
 fetchNewMovies();

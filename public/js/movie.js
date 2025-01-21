@@ -37,20 +37,30 @@ function displayMovie(Movie) {
     desc.textContent = `${Movie.Title} - ${Movie.Genre}`;
     
     const score = document.createElement('div');
+    score.classList.add('score');
     score.textContent =  `${Movie.imdbRating} / 10`;
     desc.appendChild(score) ;
 
     const actor = document.createElement('div');
-    actor.textContent = Movie.Actors;
+    const p_actor = document.createElement('p');
+    actor.classList.add('actor');
+    p_actor.textContent = Movie.Actors;
+    actor.appendChild(p_actor);
 
     const plot = document.createElement('div');
-    plot.textContent= Movie.Plot;
+    const p_plot = document.createElement('p');
+    const h3 = document.createElement('h3');
+    h3.textContent = 'about the movie';
+    plot.classList.add('plot');
+    p_plot.textContent= Movie.Plot;
+    plot.appendChild(h3);
+    plot.appendChild(p_plot);
     
     filmContainer.appendChild(filmPoster);
     filmPoster.appendChild(filmImg);
     filmContainer.appendChild(desc);
-    filmContainer.appendChild(actor);
     filmContainer.appendChild(plot);
+    filmContainer.appendChild(actor);
 }
 
 

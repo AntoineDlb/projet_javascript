@@ -1,15 +1,19 @@
 .film_container{
-    padding-left: 12px;
-    padding-top: 12px;
+    padding: 1em;
     display: grid;
     grid-template-columns: 0.5fr 1fr ;
     grid-template-rows: auto;
     height: 75vh;
+    background-color: rgb(27, 27, 27);
+    flex-wrap: wrap;
 }
 
 .film_container>div{
     padding: 10px;
     text-align: center;
+    background-color: rgb(82, 82, 79);
+    margin: 0.5em;
+
 }
 
 .poster {
@@ -18,22 +22,28 @@
     background-color: .292B31;
     border-radius: 10px;
     padding: 10px;
-    overflow: hidden;
-    text-align: center;
     transition: transform 0.5s;
     height: 95%;
+    width: fit-content;
+}
+
+.poster img{
+    height: 100%;
+    border-radius: 10px;
 }
 
 .actor,.desc{
     grid-column: 2 / 3;
     margin-left: 5px;
+    border-radius: 10px;
 }
 
 .desc{
     color: aliceblue;
     display: flex;
     flex-direction: row;
-    grid-row: 1/2;
+    grid-row: 3 ;
+    grid-column: 1;
     background-color: .3a3c42;
     border-radius: 10px;
     padding: 10px;
@@ -48,16 +58,14 @@
     flex-direction: row-reverse;
     justify-content: flex-end;
     margin-left: auto;
+    align-items: center;
 }
 
 .actor {
-    grid-row: 2 / 3;
     color: aliceblue;
 }
 
 .plot{
-    grid-column: 1/ span 3;
-    grid-row: 3;
     background-color: .3a3c42;
     border-radius: 10px;
     overflow: hidden;

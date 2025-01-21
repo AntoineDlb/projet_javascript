@@ -73,13 +73,13 @@ function clearResults() {
     filmContainer.innerHTML = ''; // Clear existing content
 }
 
-function extend_seatch_bar() {
-    const searchButton = document.querySelector('.loupe_search');
-    const searchInput = document.querySelector('.search_bar');
-    searchButton.addEventListener('click', function() {
-        searchInput.classList.toggle('search_bar_active');
-    });
-}
+// function extend_seatch_bar() {
+//     const searchButton = document.querySelector('.loupe_search');
+//     const searchInput = document.querySelector('.search_bar');
+//     searchButton.addEventListener('click', function() {
+//         searchInput.classList.toggle('search_bar_active');
+//     });
+// }
 
-extend_seatch_bar();
+// extend_seatch_bar();
 
