@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/main.css">
     <title>Ciné_Review</title>
 </head>
 
@@ -15,25 +16,33 @@
         <header class="main_sidebar" id="header">
         </header>
 
-
-
         <div class="search_bar_container">
-            <input type="text" id="search" placeholder="Rechercher un film" class="search_bar">
-
+            <div class="loupe_search"><img src="assets/search.svg" alt="loupe_barre_de_recherche"></div>
+            <form id="searchForm" action="search.html" method="get" >
+                <input type="text" id="search" name="query" placeholder="Rechercher un film" class="search_bar">
+            </form>
         </div>
 
         <main class="main_content">
+            <div class="titre_container">
+                <div class="titre">
+                    <h1>Les films les plus populaires</h1>
+                </div>
+            </div>
             <div class="film_container">
             </div>
             <div class="bouton_fetch">
-                <input type="button" value="Rechercher" class="search_button">
+                <input type="button" value="afficher plus" class="bouton">
 
             </div>
+            <footer id="footer"></footer>
         </main>
+
 
     </div>
 
     <script src="js/index.js"></script>
+    <script src="js/header.js"></script>
 </body>
 
 </html>

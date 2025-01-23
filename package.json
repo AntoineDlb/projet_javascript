@@ -1,9 +1,11 @@
 {
   "name": "projet_javascript",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "Ce projet est un site web développé en JavaScript. Il a pour but de simuler un site de review cinéma.",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -17,9 +19,7 @@
     "url": "https://github.com/AntoineDlb/projet_javascript/issues"
   },
   "homepage": "https://github.com/AntoineDlb/projet_javascript#readme",
-  "description": "",
   "dependencies": {
-    "express": "^4.21.2",
-    "path": "^0.12.7"
+    "express": "^4.21.2"
   }
 }

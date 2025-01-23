@@ -23,8 +23,7 @@ async function fetchTrendingMovies() {
 
 function displayMovies(movies) {
     const filmContainer = document.querySelector('.film_container');
-    // filmContainer.innerHTML = ''; // Commented out to prevent clearing the container
-
+    // filmContainer.innerHTML = ''; 
     movies.forEach(movie => {
         if (movie.Poster === 'N/A') {
             return; // Ne pas afficher les films sans affiche
@@ -32,6 +31,7 @@ function displayMovies(movies) {
 
         const filmCard = document.createElement('div');
         filmCard.classList.add('film_card');
+        filmCard.setAttribute('data-id',movie.imdbID);
 
         const filmImg = document.createElement('img');
         filmImg.src = movie.Poster;
@@ -48,36 +48,27 @@ function displayMovies(movies) {
             filmContainer.appendChild(filmCard);
         }
     });
+
+    click_filmCard()
+
 }
 
 function fetchNewMovies() {
-    const bouton_fetch = document.querySelector('.search_button');
+    const bouton_fetch = document.querySelector('.bouton');
     bouton_fetch.addEventListener('click', fetchTrendingMovies);
 }
 
-async function load_header() {
-    const header = document.getElementById('header');
-    try {
-        const reponse = await fetch('components/header.html');
-        const data = await reponse.text();
-        header.innerHTML = data;
-    } catch (error) {
-        console.error('Erreur lors de la récupération du header:', error);
-    }
 
+
+function click_filmCard() {
+    const filmCards = document.querySelectorAll('.film_card');
+    filmCards.forEach(filmCard => {
+        filmCard.addEventListener('click', () => {
+            const MovieId = filmCard.getAttribute('data-id');
+            window.location.href=`movie.html?i=${MovieId}`;
+        });
+    });
 }
-
-// function click_filmCard() {
-//     const filmCards = document.querySelectorAll('.film_card');
-//     filmCards.forEach(filmCard => {
-//         filmCard.addEventListener('click', () => {
-//             /* a compléter */
-
-//         });
-//     });
-// }
-
-load_header();
 
 // Initialize the event listener for the button
 fetchNewMovies();

@@ -1,1 +1,38 @@
-    
+<!-- page d'accueil du site de films -->
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Résultats de recherche - Ciné_Review</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="main_sidebar" id="header">
+        </header>
+
+        <div class="search_bar_container">
+            <div class="loupe_search"><img src="assets/search.svg" alt="loupe_barre_de_recherche"></div>
+            <form id="searchForm" method="get">
+                <input type="text" id="search" name="query" placeholder="Rechercher un film" class="search_bar">
+            </form>
+        </div>
+
+        <main class="main_content">
+            <div class="film_container" id="filmContainer">
+                <!-- Les résultats de recherche seront affichés ici -->
+            </div>
+            <footer id="footer"></footer>
+        </main>
+    </div>
+
+    <script src="js/search.js"></script>
+    <script src="js/header.js"></script>
+</body>
+
+</html>
