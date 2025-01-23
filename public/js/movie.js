@@ -43,17 +43,24 @@ function displayMovie(Movie) {
 
     const actor = document.createElement('div');
     const p_actor = document.createElement('p');
+    const h3_actor = document.createElement('h3');
+    h3_actor.textContent = 'Actors';
     actor.classList.add('actor');
+    const hr_actor = document.createElement('hr');
     p_actor.textContent = Movie.Actors;
+    actor.appendChild(h3_actor);
+    actor.appendChild(hr_actor); 
     actor.appendChild(p_actor);
 
     const plot = document.createElement('div');
     const p_plot = document.createElement('p');
     const h3 = document.createElement('h3');
-    h3.textContent = 'about the movie';
+    h3.textContent = 'About the Movie';
+    const hr = document.createElement('hr');
     plot.classList.add('plot');
     p_plot.textContent= Movie.Plot;
     plot.appendChild(h3);
+    plot.appendChild(hr);
     plot.appendChild(p_plot);
     
     filmContainer.appendChild(filmPoster);

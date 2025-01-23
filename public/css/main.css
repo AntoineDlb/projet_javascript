@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'font';
+    src: url('../font/font.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -8,26 +16,31 @@ html, body {
     height: 100%;
     width: 100%;
     background-color: #131417;
+    font-family: 'font', sans-serif;
+}
+
+h1 h2 h3 h4 h5 h6 {
+    font-family: 'font', sans-serif;
 }
 
 
 .container {
     display: grid;
-    grid-template-columns: auto 1fr; /* Ajuste automatiquement la largeur de la première colonne */
+    grid-template-columns: auto 1fr; 
     grid-template-rows: auto 1fr;
     grid-template-areas:
         "main_sidebar search"
         "main_sidebar main";
     
     border-radius: 10px;
-    height: 100vh; /* Assurez-vous que la grille prend toute la hauteur de la page */
+    height: 100vh; 
 }
 
 .logo_img {
-    width: 100%; /* Le logo prendra toute la largeur de son conteneur */
-    max-width: 150px; /* Définissez une largeur maximale pour le logo */
-    min-width: 100px; /* Définissez une largeur minimale pour le logo */
-    height: auto; /* Maintient le ratio d'aspect du logo */
+    width: 100%; 
+    max-width: 150px; 
+    min-width: 100px; 
+    height: auto; 
     border-top-left-radius: 10px;
 }
 
@@ -53,13 +66,12 @@ html, body {
     background-color: #292B31;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-    height: 100%; /* Assurez-vous que la hauteur de la sidebar prend toute la hauteur de la grille */
-    max-width: 150px; /* Limitez la largeur maximale à celle du logo */
+    height: 100%; 
+    max-width: 150px; 
 }
 
 .main_content {
     grid-area: main;
-    height: 100%; /* Assurez-vous que la hauteur du contenu principal prend toute la hauteur de la grille */
     background-color: #131417;
 
 }
@@ -115,36 +127,27 @@ html, body {
     opacity: 1;
 }
 
-.filters {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1em;
-    padding: 1em;
-    background-color: #55555f;
-    border-radius: 10px;
+.footer {
+    background-color: #292B31;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    bottom: 0;
+    width: 100%;
+    border-top: 2px solid #ccc;
+    
 }
 
-.filters_list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1em;
-    padding: 1em;
-    background-color: #55555f;
-    border-radius: 10px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+#footer { 
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #292B31;
+    color: white;
+    text-align: center;
+    
 }
 
-.filters img {
-    cursor: pointer;
-    margin-left: 0.5em;
-}
-
-.filters_liste_active {
-    opacity: 1;
-}
 
 @media (max-width: 768px) {
 
