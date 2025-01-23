@@ -23,10 +23,9 @@ async function fetchTrendingMovies() {
 
 function displayMovies(movies) {
     const filmContainer = document.querySelector('.film_container');
-    // filmContainer.innerHTML = ''; 
     movies.forEach(movie => {
         if (movie.Poster === 'N/A') {
-            return; // Ne pas afficher les films sans affiche
+            return; 
         }
 
         const filmCard = document.createElement('div');
@@ -63,6 +62,7 @@ function extend_seatch_bar() {
     });
 }
 
+<<<<<<< Updated upstream
 // function click_filmCard() {
 //     const filmCards = document.querySelectorAll('.film_card');
 //     filmCards.forEach(filmCard => {
@@ -76,7 +76,8 @@ function extend_seatch_bar() {
 extend_seatch_bar();
 
 // Initialize the event listener for the button
+=======
+>>>>>>> Stashed changes
 fetchNewMovies();
 
-// Optionally, fetch trending movies on page load
 fetchTrendingMovies();

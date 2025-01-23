@@ -111,7 +111,7 @@ html, body {
 }
 
 .search_bar_active {
-    width: 200px; /* Ajustez cette valeur selon vos besoins */
+    width: 200px;
     opacity: 1;
 }
 
@@ -149,11 +149,11 @@ html, body {
 @media (max-width: 768px) {
 
     .logo_img {
-        max-width: 150px; /* Ajustez la largeur maximale pour les écrans plus petits */
-        min-width: 100px; /* Ajustez la largeur minimale pour les écrans plus petits */
+        max-width: 150px;
+        min-width: 100px;
     }
     .main_sidebar {
-        max-width: 150px; /* Ajustez la largeur maximale pour les écrans plus petits */
+        max-width: 150px;
     }
 
 }
@@ -161,10 +161,10 @@ html, body {
 @media (max-width: 480px) {
     
     .logo_img {
-        max-width: 100px; /* Ajustez la largeur maximale pour les très petits écrans */
-        min-width: 100px; /* Ajustez la largeur minimale pour les très petits écrans */
+        max-width: 100px; 
+        min-width: 100px; 
     }
     .main_sidebar {
-        max-width: 100px; /* Ajustez la largeur maximale pour les très petits écrans */
+        max-width: 100px; 
     }
 }
