@@ -32,7 +32,9 @@
 
 .film_info {
     padding: 10px;
-    color: #fff;
+    color: #000000;
+    background-color: rgba(210, 210, 210, 0.667);
+    border-radius: 10px;
 }
 
 .bouton_fetch{
@@ -59,11 +61,15 @@
     display: flex;
     justify-content: center;
     margin: 1em;
+    
 }
 
 .titre {
-    background-color: #2B2B30;
+    
     padding: 1em;
+
+    color: #000000;
+    background-color: rgba(210, 210, 210, 0.667);
     border-radius: 10px;
 }
 
