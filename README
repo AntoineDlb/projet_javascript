@@ -1,5 +1,10 @@
 # Projet JavaScript
 
+## accès 
+
+https://github.com/AntoineDlb/projet_javascript
+
+
 ## Description
 Ce projet est un site web développé en JavaScript. Il a pour but de simuler un site de review cinéma.
 
@@ -13,7 +18,7 @@ Pour installer et exécuter ce projet localement, suivez les étapes ci-dessous 
 
 1. Clonez le dépôt :
     ```bash
-    git clone https://github.com/votre-utilisateur/projet_javascript.git
+    git clone https://github.com/AntoineDlb/projet_javascript.git
     ```
 
 2. Accédez au répertoire du projet :
