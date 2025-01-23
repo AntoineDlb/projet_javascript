@@ -1,6 +1,9 @@
+let pageActuelle = 1;
+
 document.addEventListener('DOMContentLoaded', function() {
     const searchForm = document.getElementById('searchForm');
     const searchInput = document.getElementById('search');
+    const loadMoreButton = document.getElementById('loadMoreButton');
 
     // Empêche la soumission du formulaire et le rechargement de la page
     searchForm.addEventListener('submit', function(event) {
@@ -11,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     searchInput.addEventListener('input', function() {
         const query = searchInput.value.trim();
         if (query) {
+            pageActuelle = 1; // Réinitialiser la page actuelle
             fetchMovies(query);
         } else {
             clearResults();
@@ -24,17 +28,26 @@ document.addEventListener('DOMContentLoaded', function() {
         searchInput.value = query;
         fetchMovies(query);
     }
+
+    // Gérer le clic du bouton "afficher plus"
+    loadMoreButton.addEventListener('click', function() {
+        const query = searchInput.value.trim();
+        if (query) {
+            fetchMovies(query, pageActuelle);
+        }
+    });
 });
 
-async function fetchMovies(query) {
+async function fetchMovies(query, page = 1) {
     const apiKey = '3866e5f2';
-    const apiUrl = `https://www.omdbapi.com/?apikey=${apiKey}&s=${query}`;
+    const apiUrl = `https://www.omdbapi.com/?apikey=${apiKey}&s=${query}&page=${page}`;
 
     try {
         const response = await fetch(apiUrl);
         const data = await response.json();
         if (data.Response === 'True') {
             displayMovies(data.Search);
+            pageActuelle++;
         } else {
             console.error('Erreur lors de la récupération des films:', data.Error);
             clearResults();
@@ -47,12 +60,15 @@ async function fetchMovies(query) {
 
 function displayMovies(movies) {
     const filmContainer = document.getElementById('filmContainer');
-    filmContainer.innerHTML = '';
+    if (pageActuelle === 1) {
+        filmContainer.innerHTML = '';  }
 
     movies.forEach(movie => {
+    
+
         const filmCard = document.createElement('div');
         filmCard.classList.add('film_card');
-        filmCard.setAttribute('data-id',movie.imdbID);
+        filmCard.setAttribute('data-id', movie.imdbID);
 
         const filmImg = document.createElement('img');
         filmImg.src = movie.Poster;
@@ -65,7 +81,10 @@ function displayMovies(movies) {
 
         filmCard.appendChild(filmImg);
         filmCard.appendChild(filmInfo);
-        filmContainer.appendChild(filmCard);
+        if (movie.Type === 'movie' && movie.Poster !== 'N/A') {
+            filmContainer.appendChild(filmCard);
+        }
+        
     });
 
     click_filmCard();
@@ -76,13 +95,12 @@ function click_filmCard() {
     filmCards.forEach(filmCard => {
         filmCard.addEventListener('click', () => {
             const MovieId = filmCard.getAttribute('data-id');
-            window.location.href=`movie.html?i=${MovieId}`;
+            window.location.href = `movie.html?i=${MovieId}`;
         });
     });
 }
 
 function clearResults() {
     const filmContainer = document.getElementById('filmContainer');
-    filmContainer.innerHTML = ''; // Clear existing content
+    filmContainer.innerHTML = ''; 
 }
-

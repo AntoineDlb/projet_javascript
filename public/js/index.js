@@ -23,10 +23,10 @@ async function fetchTrendingMovies() {
 
 function displayMovies(movies) {
     const filmContainer = document.querySelector('.film_container');
-    // filmContainer.innerHTML = ''; 
+    
     movies.forEach(movie => {
         if (movie.Poster === 'N/A') {
-            return; // Ne pas afficher les films sans affiche
+            return;
         }
 
         const filmCard = document.createElement('div');
@@ -70,8 +70,8 @@ function click_filmCard() {
     });
 }
 
-// Initialize the event listener for the button
+
 fetchNewMovies();
 
-// Optionally, fetch trending movies on page load
+
 fetchTrendingMovies();
